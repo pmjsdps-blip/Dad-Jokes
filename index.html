@@ -1,21 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>QR Phrases</title>
+<title>Dad Jokes</title>
+
+<style>
+body {
+  font-family: sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+
+/* Main joke */
+#text {
+  font-size: 42px;
+  font-weight: bold;
+}
+
+/* "scan again" line */
+#sub {
+  margin-top: 20px;
+  font-size: 20px;
+  opacity: 0.7;
+}
+
+/* Bottom vote text */
+#footer {
+  position: fixed;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+</style>
 </head>
 
-<body style="font-family:sans-serif;text-align:center;margin-top:40vh;font-size:28px;">
+<body>
 
-<div id="text">Loading...</div>
+<div id="text"></div>
+<div id="sub">Scan again for another dad joke</div>
+
+<div id="footer">VOTE HYRUM FOR SERVICE</div>
 
 <script>
-const phrases = [
-"My wife said I should do lunges to stay in shape. That would be a big step forward.", "I don't trust those trees. They seem kind of shady.",
-"How do you get a Pikachu on a bus? You Pokémon",
+window.onload = function() {
+  const jokes = [
+    "Why don’t skeletons fight each other? They don’t have the guts.",
+    "I only know 25 letters of the alphabet. I don’t know y.",
+    "Why can’t you trust stairs? They’re always up to something.",
+    "Why did the scarecrow win an award? Because he was outstanding in his field.",
+    "Why did the golfer bring two pairs of pants? In case he got a hole in one.",
+    "What did the ocean say to the beach? Nothing, it just waved."
+    "My wife said I should do lunges to stay in shape. That would be a big step forward.",
+    "I don't trust those trees. They seem kind of shady.",
+    "How do you get a Pikachu on a bus? You Pokémon",
 "How do you get a country girl’s attention? A tractor.",
 "What did the police officer say to his belly-button? You’re under a vest.",
-"I just got my doctor’s test results and I’m really upset Turns out, I’m not",
 "Did you know that there are more planes in the ocean than there are submarines in the sky? Well that’s plane to sea",
 "I used to be addicted to the Hokey Pokey but then I turned myself around",
 "If a child refuses to nap, are they guilty of resisting a rest?",
@@ -30,13 +77,12 @@ const phrases = [
 "There's 3 types of people in this world. Those who can count, and those who can't",
 "Wanna hear a joke about paper? Nevermind. It's tearible", "I don’t mean to brag but cashiers are always checking me out",
 "Did you know that I eat more bananas than monkeys? In fact I have never eaten a monkey",
-"You know, I love going outdoors. It’s way safer and easier than going out windows",
-"What do you call a Mexican who doesn’t like protein powder? No whey Jose",
-"What do you call a Mexican that has rubber feet? Roberto"
-];
+"You know, I love going outdoors. It’s way safer and easier than going out windows"
+  ];
 
-document.getElementById("text").innerText =
-  phrases[Math.floor(Math.random() * phrases.length)];
+  const randomIndex = Math.floor(Math.random() * jokes.length);
+  document.getElementById("text").innerText = jokes[randomIndex];
+};
 </script>
 
 </body>
