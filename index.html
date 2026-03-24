@@ -17,20 +17,17 @@ body {
   height: 100vh;
 }
 
-/* Main joke */
 #text {
   font-size: 42px;
   font-weight: bold;
 }
 
-/* "scan again" line */
 #sub {
   margin-top: 20px;
   font-size: 20px;
   opacity: 0.7;
 }
 
-/* Bottom vote text */
 #footer {
   position: fixed;
   bottom: 15px;
@@ -44,46 +41,45 @@ body {
 
 <body>
 
-<div id="text"></div>
+<div id="text">...</div>
 <div id="sub">Scan again for another dad joke</div>
-
 <div id="footer">VOTE HYRUM FOR SERVICE</div>
 
 <script>
-window.onload = function() {
-  const jokes = [
-    "Why don’t skeletons fight each other? They don’t have the guts.",
-    "I only know 25 letters of the alphabet. I don’t know y.",
-    "Why can’t you trust stairs? They’re always up to something.",
-    "Why did the scarecrow win an award? Because he was outstanding in his field.",
-    "Why did the golfer bring two pairs of pants? In case he got a hole in one.",
-    "What did the ocean say to the beach? Nothing, it just waved."
-    "My wife said I should do lunges to stay in shape. That would be a big step forward.",
-    "I don't trust those trees. They seem kind of shady.",
-    "How do you get a Pikachu on a bus? You Pokémon",
+const jokes = [
+"Why don’t skeletons fight each other? They don’t have the guts.",
+"I only know 25 letters of the alphabet. I don’t know y.",
+"Why can’t you trust stairs? They’re always up to something.",
+"Why did the scarecrow win an award? Because he was outstanding in his field.",
+"Why did the golfer bring two pairs of pants? In case he got a hole in one.",
+"What did the ocean say to the beach? Nothing, it just waved.",
+"My wife said I should do lunges to stay in shape. That would be a big step forward.",
+"I don't trust those trees. They seem kind of shady.",
+"How do you get a Pikachu on a bus? You Pokémon.",
 "How do you get a country girl’s attention? A tractor.",
 "What did the police officer say to his belly-button? You’re under a vest.",
-"Did you know that there are more planes in the ocean than there are submarines in the sky? Well that’s plane to sea",
-"I used to be addicted to the Hokey Pokey but then I turned myself around",
+"Did you know that there are more planes in the ocean than submarines in the sky? Well that’s plane to sea.",
+"I used to be addicted to the Hokey Pokey but then I turned myself around.",
 "If a child refuses to nap, are they guilty of resisting a rest?",
-"I once had a dream I was floating in an ocean of orange soda. It was more of a fanta sea.",
-"Did you hear about the kidnapping at school? It's okay, he woke up",
-"I had a neck brace fitted years ago and I've never looked back since",
-"Why don’t you take a Pokémon to the bathroom? It might peak at you",
+"I once had a dream I was floating in an ocean of orange soda. It was more of a Fanta sea.",
+"Did you hear about the kidnapping at school? It's okay, he woke up.",
+"I had a neck brace fitted years ago and I've never looked back since.",
+"Why don’t you take a Pokémon to the bathroom? It might peek at you.",
 "How do you keep a fool in suspense? .....",
-"To the guy who invented zero. Thanks for nothing",
-"I got mugged by 6 dwarfs last night. Not Happy", "My wife said to put ketchup on the shopping list. Now I can't see anything",
+"To the guy who invented zero. Thanks for nothing.",
+"I got mugged by 6 dwarfs last night. Not Happy.",
+"My wife said to put ketchup on the shopping list. Now I can't see anything.",
 "My therapist said I have a phobia of getting married. He asked “do you know what your symptoms are?” I said “can’t say I do.”",
-"There's 3 types of people in this world. Those who can count, and those who can't",
-"Wanna hear a joke about paper? Nevermind. It's tearible", "I don’t mean to brag but cashiers are always checking me out",
-"Did you know that I eat more bananas than monkeys? In fact I have never eaten a monkey",
-"You know, I love going outdoors. It’s way safer and easier than going out windows",
-    "Why are russian dolls so stuck up? It's cause they're full of themselves",
-  ];
+"There's 3 types of people in this world. Those who can count, and those who can't.",
+"Wanna hear a joke about paper? Nevermind. It's tearible.",
+"I don’t mean to brag but cashiers are always checking me out.",
+"Did you know that I eat more bananas than monkeys? In fact I have never eaten a monkey.",
+"You know, I love going outdoors. It’s way safer and easier than going out windows.",
+"Why are Russian dolls so stuck up? It's cause they're full of themselves."
+];
 
-  const randomIndex = Math.floor(Math.random() * jokes.length);
-  document.getElementById("text").innerText = jokes[randomIndex];
-};
+document.getElementById("text").innerText =
+  jokes[Math.floor(Math.random() * jokes.length)];
 </script>
 
 </body>
