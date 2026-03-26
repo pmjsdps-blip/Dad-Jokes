@@ -1,3 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dad Jokes</title>
+
+<style>
+body {
+  font-family: sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+}
+
+#text {
+  font-size: 42px;
+  font-weight: bold;
+}
+
+#sub {
+  margin-top: 20px;
+  font-size: 24px;
+  opacity: 0.8;
+}
+
+#footer {
+  position: fixed;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div id="text"></div>
+<div id="sub">Scan again for another dad joke</div>
+<div id="footer">VOTE HYRUM FOR SERVICE</div>
+
 <script>
 window.onload = function() {
   const jokes = [
@@ -32,9 +79,11 @@ window.onload = function() {
     "Why are Russian dolls so stuck up? It's cause they're full of themselves."
   ];
 
+  // load saved order
   let order = JSON.parse(localStorage.getItem("dadOrder"));
 
   if (!order || order.length === 0) {
+    // create new shuffled order
     order = [...Array(jokes.length).keys()];
     for (let i = order.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -42,9 +91,16 @@ window.onload = function() {
     }
   }
 
+  // pop next joke
   const index = order.pop();
+
+  // save updated order
   localStorage.setItem("dadOrder", JSON.stringify(order));
 
+  // show joke
   document.getElementById("text").innerText = jokes[index];
 };
 </script>
+
+</body>
+</html>
